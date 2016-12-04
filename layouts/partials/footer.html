@@ -99,14 +99,14 @@
     		  &nbsp;&bull;&nbsp;
     		  {{ .Site.LastChange.Format "2006" }}
     		  
-    		  {{ if .Site.Title }}
+          {{ if .Site.Author.impressum }}
     		  &nbsp;&bull;&nbsp;
-    		  <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    		  <a href="{{ .Site.BaseURL }}{{.Site.Author.impressum}}">Impressum</a>
     		  {{ end }}
   	    </p>
   	        <!-- Please don't remove this, keep my open source work credited :) -->
     		<p class="theme-by text-muted">
-    		  Theme by
+    		  Basierend auf einem Thema von
     		  <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
     		</p>
       </div>

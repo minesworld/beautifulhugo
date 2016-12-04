@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
   {{ partial "head.html" . }}
 
@@ -33,24 +33,40 @@
             {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
             {{ range $pag.Pages }}
             <article class="post-preview">
-              <a href="{{ .Permalink }}">
-          	  <h2 class="post-title">{{ .Title }}</h2>
-          	
-          	  {{ if .Params.subtitle }}
-          	  <h3 class="post-subtitle">
-          	    {{ .Params.subtitle }}
-          	  </h3>
-          	  {{ end }}  
-              </a>
+              {{ if .Params.link }}
+                <h2 class="post-title">
+                  <a href="{{ .Params.link }}">
+                    <i class="fa fa-bookmark"></i>
+                    {{ .Title }}
+                  </a>
+                </h2>
+              {{ else }}
+                <a href="{{ .Permalink }}">
+                <h2 class="post-title">{{ .Title }}</h2>
+
+                {{ if .Params.subtitle }}
+                  <h3 class="post-subtitle">
+                  {{ .Params.subtitle }}
+                  </h3>
+                {{ end }}
+                </a>
+              {{ end }}
 
               <p class="post-meta">
-                Posted on {{ .Date.Format "January 2, 2006" }}
+                {{ .Date.Format "January 2, 2006" }}
               </p>
             
-              <div class="post-entry">
+              {{ if .Params.link }}
+                <div class="post-entry">
                 {{ .Summary }}
-          	  <a href="{{ .Permalink }}" class="post-read-more">[Read&nbsp;More]</a>
+                <a href="{{ .Params.link }}" class="post-read-more">[~]</a>
+                </div>
+             {{ else }}
+              <div class="post-entry">
+              {{ .Summary }}
+              <a href="{{ .Permalink }}" class="post-read-more">[…]</a>
               </div>
+            {{ end }}
             
              </article>
             {{ end }}
