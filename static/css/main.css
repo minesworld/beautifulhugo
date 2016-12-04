@@ -2,8 +2,46 @@
 
 /* --- General --- */
 
+@font-face {font-family: "DejaWeb"; /* regular */
+    src: url("../font/0d7a477c5497d0a2c47b40cb43ba5017.eot");
+    src: url("../font/0d7a477c5497d0a2c47b40cb43ba5017.eot?#iefix") format("embedded-opentype"),
+    url("../font/0d7a477c5497d0a2c47b40cb43ba5017.woff2") format("woff2"),
+    url("../font/0d7a477c5497d0a2c47b40cb43ba5017.woff") format("woff"),
+    url("../font/0d7a477c5497d0a2c47b40cb43ba5017.ttf") format("truetype"),
+    url("../font/0d7a477c5497d0a2c47b40cb43ba5017.svg#DejaWeb") format("svg");
+}
+
+@font-face {font-family: "DejaWeb-Bold"; /* bold */
+    src: url("../font/c7a70537dc9c2bcf23939e9650e17141.eot");
+    src: url("../font/c7a70537dc9c2bcf23939e9650e17141.eot?#iefix") format("embedded-opentype"),
+    url("../font/c7a70537dc9c2bcf23939e9650e17141.woff2") format("woff2"),
+    url("../font/c7a70537dc9c2bcf23939e9650e17141.woff") format("woff"),
+    url("../font/c7a70537dc9c2bcf23939e9650e17141.ttf") format("truetype"),
+    url("../font/c7a70537dc9c2bcf23939e9650e17141.svg#DejaWeb") format("svg");
+}
+
+@font-face {font-family: "DejaWeb-Italic"; /* italic */
+    src: url("../font/dd682bdbbebe93cca774120fc4fbaa91.eot");
+    src: url("../font/dd682bdbbebe93cca774120fc4fbaa91.eot?#iefix") format("embedded-opentype"),
+    url("../font/dd682bdbbebe93cca774120fc4fbaa91.woff2") format("woff2"),
+    url("../font/dd682bdbbebe93cca774120fc4fbaa91.woff") format("woff"),
+    url("../font/dd682bdbbebe93cca774120fc4fbaa91.ttf") format("truetype"),
+    url("../font/dd682bdbbebe93cca774120fc4fbaa91.svg#DejaWeb") format("svg");
+}
+
+@font-face {font-family: "DejaWeb-BoldItalic"; /* bold italic */
+    src: url("../font/3a32c23a199d549c77f977bcc6333401.eot");
+    src: url("../font/3a32c23a199d549c77f977bcc6333401.eot?#iefix") format("embedded-opentype"),
+    url("../font/3a32c23a199d549c77f977bcc6333401.woff2") format("woff2"),
+    url("../font/3a32c23a199d549c77f977bcc6333401.woff") format("woff"),
+    url("../font/3a32c23a199d549c77f977bcc6333401.ttf") format("truetype"),
+    url("../font/3a32c23a199d549c77f977bcc6333401.svg#DejaWeb") format("svg");
+}
+
+
+
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'DejaWeb', 'Lora', 'Times New Roman', serif;
   font-size: 18px;
   color: #404040;
   position: relative;
@@ -18,7 +56,7 @@ p a {
   color: #008AFF;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'DejaWeb', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
 a {
@@ -50,7 +88,7 @@ hr.small {
 }
 
 .main-explain-area {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'DejaWeb', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 15px inherit;
 }
 
@@ -96,7 +134,7 @@ img {
 .navbar-custom {
   background: #F5F5F5;
   border-bottom: 1px solid #EAEAEA;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'DejaWeb', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .navbar-custom .nav li a {
@@ -314,7 +352,8 @@ footer .theme-by {
   margin: 0 0 10px;
 }
 .post-preview .post-entry {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'DejaWeb', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: regular;
 }
 .post-preview .post-read-more {
   font-weight: 800;
@@ -377,7 +416,7 @@ footer .theme-by {
   font-size: 27px;
   line-height: 1.1;
   display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'DejaWeb', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
 }
@@ -402,7 +441,7 @@ footer .theme-by {
   padding: 5px 10px;
   font-size: 11px;
   color: #EEE;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'DejaWeb', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   right: 0;
   bottom: 0;
   display: none;
@@ -476,7 +515,7 @@ footer .theme-by {
 /* --- Pager --- */
 
 .pager li a {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'DejaWeb', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
