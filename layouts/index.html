@@ -30,7 +30,7 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="posts-list">
-            {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
+            {{ $pag := .Paginate (where .Data.Pages "Type" "post") 100 }}
             {{ range $pag.Pages }}
             <article class="post-preview">
               {{ if .Params.link }}
@@ -76,12 +76,12 @@
           <ul class="pager main-pager">
             {{ if .Paginator.HasPrev }}
             <li class="previous">
-              <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; Newer Posts</a>
+              <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; Neuere</a>
             </li>
             {{ end }}
             {{ if .Paginator.HasNext }}
             <li class="next">
-              <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">Older Posts &rarr;</a>
+              <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">Ältere &rarr;</a>
             </li>
             {{ end }}
           </ul>
