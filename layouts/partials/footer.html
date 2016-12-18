@@ -4,8 +4,7 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="shariff" 
              data-lang="{{ .Site.Language }}" 
-             data-share-services="[&quot;{{ delimit .Site.Params.shareservices "&quot;,&quot;" }}&quot;]"
-             data-abo-services="[&quot;{{ delimit .Site.Params.aboservices "&quot;,&quot;" }}&quot;]"
+             data-services="[&quot;{{ delimit .Site.Params.services "&quot;,&quot;" }}&quot;]"
              data-mail-url="mailto:{{ .Site.Author.email }}"
              data-mail-subject="{{ .Site.Title }}: {{ .Title }}"
              data-mail-body="{{ .Site.BaseURL }}{{ .URL }}"

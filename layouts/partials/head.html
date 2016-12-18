@@ -27,5 +27,73 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ .URL }}/" />
   <meta property="og:image" content="{{ .Site.Params.logo }}" />
-  
+
+  <script>
+    window.ShariffExternalCreator = {
+      'createBtListFunc': function(options, socialshareElement, shariff) {
+        if (shariff.options.theme === "text") return null;
+        return $('<ul class="list-inline text-center footer-links">');
+      },
+      'createBtFunc': function(service, btIndex, options, buttonList, shariff) {
+        var self = shariff;
+
+        if (shariff.options.theme !== "text") {
+          var span = $('<span class="fa-stack fa-lg">');
+          var faCircle = '<i class="fa fa-circle fa-stack-2x">';
+          
+          var faService = '<i class="fa fa-stack-1x fa-inverse';
+          if (typeof service.faName !== 'undefined') {
+              faService = faService + ' ' + service.faName;
+          }
+          faService = faService + '">';
+
+          span.append(faCircle).append(faService);
+
+          var li = $('<li>');
+
+          var shareLink = $('<a>').attr('href', service.shareUrl).append(span);
+          shareLink.attr('title', shariff.getLocalized(service, 'title'));
+          if (service.popup) {
+              shareLink.attr('data-rel', 'popup');
+          } else if (service.blank) {
+              shareLink.attr('target', '_blank');
+          }
+          
+          // add attributes for screen readers
+          shareLink.attr('role', 'button');
+          shareLink.attr('aria-label', shariff.getLocalized(service, 'title'));
+
+          li.append(shareLink);
+
+          return li;
+
+        } else if (service.name === 'twitter') {
+          var shareLink = $('<a>').attr('href', service.shareUrl);
+          shareLink.attr('title', shariff.getLocalized(service, 'title'));
+          if (service.popup) {
+              shareLink.attr('data-rel', 'popup');
+          } else if (service.blank) {
+              shareLink.attr('target', '_blank');
+          }
+          
+          // add attributes for screen readers
+          shareLink.attr('role', 'button');
+          shareLink.attr('aria-label', shariff.getLocalized(service, 'title'));
+
+          var faService = '<i class="post-twitter fa';
+          if (typeof service.faName !== 'undefined') {
+              faService = faService + ' ' + service.faName;
+          }
+          faService = faService + '">';
+
+          shareLink.append(faService);
+          shareLink.append(shariff.getTitle())
+          
+
+          return shareLink
+        }
+        return null;
+      }
+    }
+  </script>  
 </head>
