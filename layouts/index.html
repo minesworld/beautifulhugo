@@ -36,14 +36,17 @@
               {{ if .Params.link }}
                 <h2 class="post-title">
                   <a href="{{ .Params.link }}">
+                    {{ if .Params.playicon }}
+                    <i class="fa fa-youtube-play"></i>
+                    {{ else }}
                     <i class="fa fa-bookmark"></i>
+                    {{ end }}
                     {{ .Title }}
                   </a>
                 </h2>
               {{ else }}
                 <a href="{{ .Permalink }}">
                 <h2 class="post-title">{{ .Title }}</h2>
-
                 {{ if .Params.subtitle }}
                   <h3 class="post-subtitle">
                   {{ .Params.subtitle }}
@@ -51,23 +54,31 @@
                 {{ end }}
                 </a>
               {{ end }}
+              {{ if .Params.tweet }}
+              <h3 class="post-title shariff"
+                  data-theme="text" 
+                  data-lang="{{ .Site.Language }}" 
+                  data-services="[&quot;twitter&quot;]"
+                  data-url="{{ .Permalink }}"
+                  data-title="{{ .Params.tweet}}"
+              ></h3>
+              {{ end }}
 
               <p class="post-meta">
                 {{ .Date.Format "January 2, 2006" }}
               </p>
-            
+
               {{ if .Params.link }}
                 <div class="post-entry">
-                {{ .Summary }}
-                <a href="{{ .Params.link }}" class="post-read-more">[~]</a>
+                  {{ .Summary }}
+                  <a href="{{ .Params.link }}" class="post-read-more">[~]</a>
                 </div>
-             {{ else }}
-              <div class="post-entry">
-              {{ .Summary }}
-              <a href="{{ .Permalink }}" class="post-read-more">[…]</a>
-              </div>
-            {{ end }}
-            
+              {{ else }}
+                <div class="post-entry">
+                  {{ .Summary }}
+                  <a href="{{ .Permalink }}" class="post-read-more">[…]</a>
+                </div>
+              {{ end }}
              </article>
             {{ end }}
           </div>

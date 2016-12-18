@@ -379,6 +379,9 @@ footer .text-action {
   }
 }
 
+.post-twitter {
+  text-align: left;
+}
 /* --- Post and page headers --- */
 
 .intro-header {
